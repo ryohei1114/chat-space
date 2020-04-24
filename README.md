@@ -4,7 +4,7 @@
 ## message テーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
@@ -19,19 +19,20 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
-
+- has_many :messages
+- has_many :groups
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-
+- has_many :users
+- has_many :message, through :groups_users
 
 
 ## groups_usersテーブル
