@@ -45,3 +45,4 @@
 - belongs_to :group
 - belongs_to :user
 
+![Uploading スクリーンショット 2020-04-28 12.16.46.png…]()
