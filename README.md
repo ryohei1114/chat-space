@@ -45,4 +45,6 @@
 - belongs_to :group
 - belongs_to :user
 
-![Uploading スクリーンショット 2020-04-28 12.16.46.png…]()
+
+
+<img width="1170" alt="スクリーンショット 2020-04-28 12 39 40" src="https://user-images.githubusercontent.com/64072936/80444862-bcb9c600-894d-11ea-897f-21649b23190d.png">
