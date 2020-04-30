@@ -40,6 +40,8 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     width: 300px;
+    overflow: scroll;
+
   }
   &__groups__group{
     font-weight: bold;
@@ -96,6 +98,7 @@
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 35px 40px;
+    overflow: scroll;
     &__message{
       padding-bottom: 46px;
       &__info{
@@ -123,13 +126,13 @@
     padding: 20px 40px;
     height: 90px;
     background-color: #d2d2d2;
-    form{
+    .new_message{
       display: flex;
       .input-box{
-        display: flex;
         width: 100%;
         position: relative;
         &__text{
+          display: flex;
           height: 50px;
           width: 100%;
           padding: 0 40px 0 10px;
@@ -141,7 +144,7 @@
           font-size: 1.3rem;
           position: absolute;
           top: 10px;
-          right: 10px;
+          right: 130px;
           &__file{
             display: none;
           }
@@ -159,3 +162,4 @@
     }
   }
 }
+
