@@ -48,3 +48,8 @@
 
 
 <img width="1170" alt="スクリーンショット 2020-04-28 12 39 40" src="https://user-images.githubusercontent.com/64072936/80444862-bcb9c600-894d-11ea-897f-21649b23190d.png">
+
+
+# 非同期の実装
+
+https://i.gyazo.com/a1cab6adcece454478eae223670c6de4.gif
