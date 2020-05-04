@@ -1,18 +1,21 @@
-.side_bar
-  .side_bar__header
-    .side_bar__header__box
-      .side_bar__header__box_user
+.side-bar
+  .side-bar__user-name
+    .side-bar__user-name__top-items
+      %p.side-bar__user-name__top-items__name
         = current_user.name
-      .side_bar__header__box_icon
-        = link_to new_group_path, class: "side_bar__header__box_icon__edit_groups" do
-          %i.far.fa-edit
-        = link_to edit_user_path(current_user.id), class: "side_bar__header__box_icon__edit_user" do
-          %i.fa.fa-cog
-  .side_bar__groups
+      %ul.side-bar__user-name__top-items__icons
+        %li.side-bar__user-name__top-items__icons__icon-edit
+          = link_to new_group_path do
+            = icon('fas','edit')
+        %li.side-bar__user-name__top-items__icons__icon-cog
+          = link_to edit_user_path(current_user) do
+            = icon('fas','cog')
+
+  .side-bar__groups
     - current_user.groups.each do |group|
-      .side_bar__groups__group
+      .side-bar__groups__group
         = link_to group_messages_path(group) do
-          .side_bar__groups__group_name
+          .side-bar__groups__group__name
             = group.name
-          .side_bar__groups__last_message
+          .side-bar__groups__group__message
             = group.show_last_message

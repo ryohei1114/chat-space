@@ -1,25 +1,27 @@
-.chat_main
-  .chat_main__header
-    .chat_main__header__group_box
-      .chat_main__header__group_box__group_name
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__left-box
+      .chat-main__group-info__left-box__current-group
         = @group.name
-      .chat_main__header__group_box__member_name
-        Members:
-        - @group.users.each do |user|
-          = user.name
-    = link_to edit_group_path(@group), class: "chat_main__header__edit_btn__group_edit" do
-      .chat_main__header__edit_btn
+      %ul.chat-main__group-info__left-box__current-member
+        %li.chat-main__group-info__left-box__current-member__list
+          Member：
+        %li.chat-main__group-info__left-box__current-member__list
+          - @group.users.each do |user|
+            = user.name
+
+    = link_to edit_group_path(@group) do
+      .chat-main__group-info__edit-btn
         Edit
 
-  .chat_main__messages
+  .chat-main__message-list
     = render @messages
 
-  .chat_main__form
-    .new_message
-      .input-box
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-          = f.label :image, class: 'input-box__img' do
-            = icon('fas', 'image')
-            = f.file_field :image, class: 'input-box__img__file'
-          = f.submit 'Send', class: 'submit-btn'
+  .chat-main__message-form
+    = form_for [@group, @message] do |f|
+      .chat-main__message-form__new-message
+        = f.text_field :content, class: 'input-text', placeholder: 'type a message'
+        = f.label :image, class: 'input-image' do
+          = icon('far', 'image', class: "image-icon")
+          = f.file_field :image, class: 'input-file'
+      = f.submit 'Send', class: 'input-send'
